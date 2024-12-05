@@ -1,0 +1,148 @@
+/* Container box styling */
+body {
+    background-image: url('image.jpg');
+    background-color: #1c1c1c;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    height: 100vh;
+    margin-right: 8%;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.post{
+    width: 40%;
+    background-color: transparent;
+    margin-left: 30%;
+    color: #fff;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+h1 {
+    margin: 0 0;
+}
+
+.loc {
+    display: grid;
+    grid-template-columns: auto;
+}
+
+p {
+    color: #ffffff;
+    margin-right: 20%;
+    font-size: 180%;
+    margin-top: 0;
+}
+
+.baner {
+    color: #0685f5;
+    font-size: 230%;
+    margin-bottom: 0;
+}
+
+.box {
+    position: relative;
+    width: 380px;
+    height: 400px;
+    background: rgba(28, 28, 28, 0.6);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    z-index: 2;
+}
+
+/* Background animation effect */
+.box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, transparent, transparent, #0685f5, #0685f5, #0685f5);
+    z-index: 1;
+    animation: animate 2s linear infinite;
+    transform-origin: bottom right;
+}
+
+/* Keyframe animation for the background */
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Login form styling */
+.form-container {
+    position: relative;
+    z-index: 3;
+    padding: 20px;
+    /* background-color: rgba(0, 0, 0, 0.7); */
+    background-color: transparent;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.form-container input {
+    width: 94%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+}
+
+.register {
+    width: 30%;
+    background-color: transparent;
+    text-align: right;
+    margin-left: 28%;
+    color: #fff;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.password {
+    width: 40%;
+    background-color: transparent;
+    text-align: left;
+    color: #fff;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.login {
+    width: 40%;
+    padding: 12px;
+    background-color: #0685f5;
+    color: rgb(241, 240, 240);
+    border: none;
+    border-radius: 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.login:hover {
+    background-color: #00bbee;
+}
+
+h2 {
+    color: white;
+    text-align: center;
+    font-size: 24px;
+}

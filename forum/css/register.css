@@ -1,0 +1,106 @@
+body {
+    background-image: url('image.jpg');
+    background-color: #1c1c1c;
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.box {
+    position: relative;
+    width: 380px;
+    height: 500px;
+    background: rgba(28, 28, 28, 0.6);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+/* Background animation effect */
+.box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, transparent, transparent, #0685f5, #0685f5, #0685f5);
+    z-index: 1;
+    animation: animate 2s linear infinite;
+    transform-origin: bottom right;
+}
+
+/* Keyframe animation for the background */
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Login form styling */
+.form-container {
+    position: relative;
+    z-index: 3;
+    padding: 20px;
+    background-color: transparent;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.form-container input {
+    width: 94%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+}
+
+.register {
+    width: 60%;
+    background-color: transparent;
+    text-align: center;
+    margin-left: 20%;
+    color: #fff;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+
+.sign_up {
+    width: 40%;
+    padding: 12px;
+    background-color: #0685f5;
+    color: rgb(241, 240, 240);
+    border: none;
+    border-radius: 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.sign_up:hover {
+    background-color: #00bbee;
+}
+
+h2 {
+    color: white;
+    text-align: center;
+    font-size: 24px;
+}
