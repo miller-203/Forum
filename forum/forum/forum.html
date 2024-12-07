@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Forum</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="logo">Community Forum</div>
+            <div class="user-profile">
+                <img src="https://www.w3schools.com/w3images/avatar2.png" alt="Profile" class="profile-image">
+                <div class="dropdown-menu">
+                    <a href="/profile">My Profile</a>
+                    <a href="/settings">Settings</a>
+                    <a href="/logout">Logout</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Post Creation Form -->
+        <div class="add-post">
+            <form action="/forum" method="POST">
+                <input type="text" name="title" placeholder="Enter post title" required>
+                <textarea name="content" id="new-post" placeholder="Write a new post..." required></textarea>
+                <label for="category">Select Category:</label>
+                <select name="category" id="category" required>
+                    <option value="general">General</option>
+                    <option value="tech">Tech</option>
+                    <option value="health">Health</option>
+                    <option value="sports">Sports</option>
+                    <option value="education">Education</option>
+                </select>
+                <button type="submit" id="add-post-button">Add Post</button>
+            </form>
+        </div>
+
+        <!-- Forum Posts Section -->
+        {{if .Posts}}
+        <main class="forum-posts">
+            <ul>
+                {{range .Posts}}
+                    <li class="post">
+                        <div class="post-header">
+                            <h2>Title: {{.Title}}</h2>
+                         
+                        </div>
+                        <p>{{.Content}}  </p>
+                        <p>Category: {{.Categories}}  </p>
+                        <p>By {{.Username}} at  {{.CreatedAt}} </p>
+                        <div class="post-interactions">
+                            <button class="like-button">Like</button>
+                            
+                            <span class="like-count">0 likes</span>
+                            <button class="like-button">Dislike</button>
+                            <span class="like-count">0 dislikes</span>
+                        </div>
+
+                        <div class="comments">
+                            <textarea class="comment-input" placeholder="Write a comment..."></textarea>
+                            <button class="comment-button">Comment</button>
+                            <div class="comment-list"></div>
+                        </div>
+                    </li>
+                {{end}}
+            </ul>
+        </main>
+        {{else}}
+        <p>No posts available.</p>
+        {{end}}
+    </div>
+</body>
+</html>

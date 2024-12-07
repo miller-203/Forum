@@ -1,0 +1,331 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f7fa;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  /* Header styles */
+  .header {
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2563eb;
+  }
+  
+  .user-profile {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .profile-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #e5e7eb;
+    transition: border-color 0.2s;
+  }
+  
+  .profile-image:hover {
+    border-color: #2563eb;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    width: 200px;
+    padding: 0.5rem 0;
+    margin-top: 0.5rem;
+    display: none;
+  }
+  
+  .user-profile:hover .dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown-menu a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #4b5563;
+    text-decoration: none;
+    transition: background-color 0.2s;
+  }
+  
+  .dropdown-menu a:hover {
+    background-color: #f3f4f6;
+    color: #2563eb;
+  }
+  input[name="title"] {
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    background-color: #f7f7f7;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[name="title"]:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.6);
+}
+
+input[name="title"]::placeholder {
+    color: #aaa;
+    font-weight: normal;
+}
+  
+  /* Post creation form */
+  .add-post {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  
+  .add-post form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .add-post input[type="text"],
+  .add-post textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+  }
+  
+  .add-post textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+  
+  .add-post input[type="text"]:focus,
+  .add-post textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+  }
+  
+  #add-post-button {
+    align-self: flex-end;
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  #add-post-button:hover {
+    background: #1d4ed8;
+  }
+  /* Category Dropdown Styling */
+.add-post select {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+  padding: 12px;
+  width: 100%;
+  margin: 10px 0;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.add-post select:focus {
+  border-color: #4CAF50;  /* Green border on focus */
+  outline: none;  /* Remove the default outline */
+}
+
+/* Styling the category label */
+.add-post label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;  /* Darker color for better readability */
+  display: block;
+}
+
+/* Hover effect for select box */
+.add-post select:hover {
+  border-color: #4CAF50;  /* Light green border when hovered */
+}
+
+/* Option styling (for dropdown items) */
+.add-post select option {
+  padding: 10px;
+  font-size: 1em;
+}
+
+/* Add Post Form - Extra Padding for better spacing */
+.add-post {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+/* Focus style for inputs and textarea (to make form interactive) */
+.add-post input[type="text"]:focus,
+.add-post textarea:focus,
+.add-post select:focus {
+  border-color: #4CAF50;  /* Green border on focus */
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);  /* Green shadow */
+  outline: none;  /* Remove default outline */
+}
+
+  /* Forum posts */
+  .forum-posts {
+    margin: 2rem 0;
+  }
+  
+  .forum-posts ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .post {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  
+  .post-header {
+    margin-bottom: 1rem;
+  }
+  
+  .post-header h2 {
+    font-size: 1.25rem;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+  }
+  
+  .post-header p {
+    color: #6b7280;
+    font-size: 0.875rem;
+  }
+  
+  /* Post interactions */
+  .post-interactions {
+    margin: 1rem 0;
+    padding-top: 1rem;
+    border-top: 1px solid #e5e7eb;
+  }
+  
+  .like-button {
+    background: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .like-button:hover {
+    background: #e5e7eb;
+  }
+  
+  .like-count {
+    margin-left: 0.5rem;
+    color: #6b7280;
+  }
+  
+  /* Comments section */
+  .comments {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e5e7eb;
+  }
+  
+  .comment-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+    resize: vertical;
+    min-height: 80px;
+  }
+  
+  .comment-input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+  }
+  
+  .comment-button {
+    background: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .comment-button:hover {
+    background: #e5e7eb;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 0.5rem;
+    }
+    
+    .header {
+      padding: 0.75rem;
+    }
+    
+    .logo {
+      font-size: 1.25rem;
+    }
+    
+    .post {
+      padding: 1rem;
+    }
+    
+    #add-post-button {
+      width: 100%;
+    }
+  }
